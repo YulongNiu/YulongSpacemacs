@@ -51,14 +51,14 @@
     :defer t
     :init (progn
             (setq ess-roxy-template-alist
-                 (quote
-                  (("description" . ".. content for \\description{} (no empty lines) ..")
-                   ("details" . ".. content for \\details{} ..")
-                   ("title" . "")
-                   ("param" . "")
-                   ("return" . "")
-                   ("examples" . "")
-                   ("author" . "Yulong Niu \\email{niuylscu@@gmail.com}"))))
+                  (quote
+                   (("description" . ".. content for \\description{} (no empty lines) ..")
+                    ("details" . ".. content for \\details{} ..")
+                    ("title" . "")
+                    ("param" . "")
+                    ("return" . "")
+                    ("examples" . "")
+                    ("author" . "Yulong Niu \\email{niuylscu@@gmail.com}"))))
             (setq ess-roxy-str "##'")
             (setq ess-user-full-name "Yulong Niu"))))
 
