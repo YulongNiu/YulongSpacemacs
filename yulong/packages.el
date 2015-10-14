@@ -17,6 +17,7 @@
       ;; package names go here
       company-c-headers
       smarter-compile
+      ess
       ))
 
 ;; List of packages to exclude.
@@ -38,5 +39,26 @@
     :init (progn
             (setq company-c-headers-path-system
                   (quote
-                   ("/usr/include/" "/usr/local/include/" "/usr/include/c++/5.1.1/" "/usr/include/c++/5.1.1/x86_64-redhat-linux/" "/usr/include/c++/5.1.1/backward/" "/usr/lib/gcc/x86_64-redhat-linux/5.1.1/include"))))))
+                   ("/usr/include/"
+                    "/usr/local/include/"
+                    "/usr/include/c++/5.1.1/"
+                    "/usr/include/c++/5.1.1/x86_64-redhat-linux/"
+                    "/usr/include/c++/5.1.1/backward/"
+                    "/usr/lib/gcc/x86_64-redhat-linux/5.1.1/include"))))))
+
+(defun yulong/post-init-ess ()
+  (use-package ess
+    :defer t
+    :init (progn
+            (setq ess-roxy-template-alist
+                 (quote
+                  (("description" . ".. content for \\description{} (no empty lines) ..")
+                   ("details" . ".. content for \\details{} ..")
+                   ("title" . "")
+                   ("param" . "")
+                   ("return" . "")
+                   ("examples" . "")
+                   ("author" . "Yulong Niu \\email{niuylscu@@gmail.com}"))))
+            (setq ess-roxy-str "##'")
+            (setq ess-user-full-name "Yulong Niu"))))
 
