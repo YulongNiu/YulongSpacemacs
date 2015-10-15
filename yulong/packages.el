@@ -16,7 +16,6 @@
     '(
       ;; package names go here
       company-c-headers
-      smarter-compile
       ess
       ))
 
