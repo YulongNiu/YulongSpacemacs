@@ -33,11 +33,9 @@ values."
              colors-enable-nyan-cat-progress-bar t)
      (shell :variables
             shell-default-shell 'ansi-term
-            shell-default-term-shell "/bin/bash")
+            shell-default-term-shell "/bin/bash"
+            shell-enable-smart-eshell t)
      org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
      version-control
@@ -49,6 +47,7 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
+     ibuffer
      yulong
      )
    ;; List of additional packages that will be installed without being
@@ -269,5 +268,6 @@ layers configuration. You are free to put any user code."
        ("\\.mp\\'" . "mptopdf %f")
        ("\\.pl\\'" . "perl %f")
        ("\\.rb\\'" . "ruby %f"))))
+
    )
 )
