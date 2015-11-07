@@ -92,9 +92,9 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(solarized-light
                          spacemacs-light
-                         solarized-light
+                         spacemacs-dark
                          solarized-dark
                          leuven
                          monokai
@@ -255,7 +255,7 @@ layers configuration. You are free to put any user code."
        (nxhtml-mode browse-url-of-buffer)
        (html-helper-mode browse-url-of-buffer)
        (octave-mode run-octave)
-       ("\\.c\\'" . "gcc -O -Wall -W -pedantic -ansi -std=c89 %f -lm -o %n")
+       ("\\.c\\'" . "gcc -O -Wall -W -pedantic -ansi -std=c99 %f -lm -o %n")
        ("\\.[Cc]+[Pp]*\\'" . "g++ -O2 %f -lm -o %n")
        ("\\.m\\'" . "gcc -O2 %f -lobjc -lpthread -o %n")
        ("\\.java\\'" . "javac %f")
