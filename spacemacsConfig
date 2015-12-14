@@ -219,12 +219,17 @@ layers configuration. You are free to put any user code."
 
   ;; linum mode
   (setq linum-format "%4d \u2502")
+  ;; (global-linum-mode)
   (add-hook 'prog-mode-hook 'linum-mode)
+  (add-hook 'c-mode-hook 'linum-mode)
+  (add-hook 'c++-mode-hook 'linum-mode)
   (add-hook 'ess-mode-hook 'linum-mode)
   (add-hook 'markdown-mode-hook 'linum-mode)
 
   ;; sp
   (add-hook 'prog-mode-hook 'smartparens-mode)
+  (add-hook 'c-mode-hook 'smartparens-mode)
+  (add-hook 'c++-mode-hook 'smartparens-mode)
   (add-hook 'ess-mode-hook 'smartparens-mode)
   (add-hook 'inferior-ess-mode-hook 'show-smartparens-mode)
   (add-hook 'inferior-ess-mode-hook 'smartparens-mode)
