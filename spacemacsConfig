@@ -93,8 +93,8 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-light
-                         spacemacs-light
                          spacemacs-dark
+                         spacemacs-light
                          solarized-dark
                          leuven
                          monokai
@@ -276,3 +276,6 @@ layers configuration. You are free to put any user code."
 
    )
 )
+
+;; Do not write anything past this comment. This is where Emacs will
+;; auto-generate custom variable definitions.
