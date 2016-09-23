@@ -40,9 +40,9 @@
                   (quote
                    ("/usr/include/"
                     "/usr/local/include/"
-                    "/usr/include/c++/5.3.1/"
-                    "/usr/include/c++/5.3.1/x86_64-redhat-linux/"
-                    "/usr/include/c++/5.3.1/backward/"
+                    "/usr/include/c++/6.1.1/"
+                    "/usr/include/c++/6.1.1/x86_64-redhat-linux/"
+                    "/usr/include/c++/6.1.1/backward/"
                     "/usr/lib/gcc/x86_64-redhat-linux/5.3.1/include"))))))
 
 (defun yulong/post-init-ess ()
