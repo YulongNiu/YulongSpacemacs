@@ -1,37 +1,33 @@
-;;; packages.el --- yulong Layer packages File for Spacemacs
+;;; packages.el --- yulong layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2014 Sylvain Benner
-;; Copyright (c) 2014-2015 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Sylvain Benner <sylvain.benner@gmail.com>
-;; URL: https://github.com/syl20bnr/spacemacs
+;; Author: YulongNiu <yulong.niu@aol.com>
+;; URL: https://github.com/YulongNiu/YulongSpacemacs
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
 ;;; License: GPLv3
 
-;; List of all packages to install and/or initialize. Built-in packages
-;; which require an initialization must be listed explicitly in the list.
-(setq yulong-packages
-    '(
-      ;; package names go here
-      company-c-headers
-      ess
-      ))
+;;; Commentary:
 
-;; List of packages to exclude.
-(setq yulong-excluded-packages '())
-
-;; For each package, define a function yulong/init-<package-name>
+;; See the Spacemacs documentation and FAQs for instructions on how to implement
+;; a new layer:
 ;;
-;; (defun yulong/init-my-package ()
-;;   "Initialize my package"
-;;   )
+;;   SPC h SPC layers RET
 ;;
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package
+;;
+;; Briefly, each package to be installednew layer or configured by this layer should be
+;; added to `yulong-packages'. Then, for each package PACKAGE:
+;;
+;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
+;;   function `yulong/init-PACKAGE' to load and initialize the package.
 
+;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
+;;   define the functions `yulong/pre-init-PACKAGE' and/or
+;;   `yulong/post-init-PACKAGE' to customize the package as it is loaded.
+
+;;; Code:
 (defun yulong/post-init-company-c-headers ()
   (use-package company-c-headers
     :defer t
@@ -40,10 +36,10 @@
                   (quote
                    ("/usr/include/"
                     "/usr/local/include/"
-                    "/usr/include/c++/6.1.1/"
-                    "/usr/include/c++/6.1.1/x86_64-redhat-linux/"
-                    "/usr/include/c++/6.1.1/backward/"
-                    "/usr/lib/gcc/x86_64-redhat-linux/5.3.1/include"))))))
+                    "/usr/include/c++/6.2.1/"
+                    "/usr/include/c++/6.2.1/x86_64-redhat-linux/"
+                    "/usr/include/c++/6.2.1/backward/"
+                    "/usr/lib/gcc/x86_64-redhat-linux/6.2.1/include"))))))
 
 (defun yulong/post-init-ess ()
   (use-package ess
@@ -61,3 +57,37 @@
             (setq ess-roxy-str "##'")
             (setq ess-user-full-name "Yulong Niu"))))
 
+(defconst yulong-packages
+  '(
+      ;; package names go here
+      company-c-headers
+      ess
+      )
+  "The list of Lisp packages required by the yulong layer.
+
+Each entry is either:
+
+1. A symbol, which is interpreted as a package to be installed, or
+
+2. A list of the form (PACKAGE KEYS...), where PACKAGE is the
+    name of the package to be installed or loaded, and KEYS are
+    any number of keyword-value-pairs.
+
+    The following keys are accepted:
+
+    - :excluded (t or nil): Prevent the package from being loaded
+      if value is non-nil
+
+    - :location: Specify a custom installation location.
+      The following values are legal:
+
+      - The symbol `elpa' (default) means PACKAGE will be
+        installed using the Emacs package manager.
+
+      - The symbol `local' directs Spacemacs to load the file at
+        `./local/PACKAGE/PACKAGE.el'
+
+      - A list beginning with the symbol `recipe' is a melpa
+        recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
+
+;;; packages.el ends here
