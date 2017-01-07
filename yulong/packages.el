@@ -71,8 +71,8 @@
                  (sbuffer (process-buffer sprocess))
                  (buf-coding (symbol-name buffer-file-coding-system))
                  (R-cmd
-                  (format "library (rmarkdown); rmarkdown::render (\"%s\")"
-                          buffer-file-name)))
+                  (format "library (rmarkdown); rmarkdown::render (\"%s\", output_dir = \"/tmp\"); browseURL(paste0(\"/tmp/\", unlist(strsplit(tail(unlist(strsplit(\"%s\", split = \"/\", fixed = TRUE)), n = 1), split = \".\", fixed = TRUE))[1], \".html\"));"
+                          buffer-file-name buffer-file-name)))
             (message "Running rmarkdown on %s" buffer-file-name)
             (ess-execute R-cmd 'buffer nil nil)
             (switch-to-buffer rmd-buf)
