@@ -53,7 +53,7 @@
                     ("param" . "")
                     ("return" . "")
                     ("examples" . "")
-                    ("author" . "Yulong Niu \\email{niuylscu@@gmail.com}"))))
+                    ("author" . "Yulong Niu \\email{yulong.niu@@hotmail.com}"))))
             (setq ess-roxy-str "##'")
             (setq ess-user-full-name "Yulong Niu"))
     (defun ess-rmarkdown ()
