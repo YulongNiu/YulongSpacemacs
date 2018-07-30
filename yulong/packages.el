@@ -55,7 +55,8 @@
                     ("examples" . "")
                     ("author" . "Yulong Niu \\email{yulong.niu@@hotmail.com}"))))
             (setq ess-roxy-str "##'")
-            (setq ess-user-full-name "Yulong Niu"))
+            (setq ess-user-full-name "Yulong Niu")
+            (setq ess-default-style 'DEFAULT))
     (defun ess-rmarkdown ()
       (interactive)
       "Compile R markdown (.Rmd). Should work for any output type."
