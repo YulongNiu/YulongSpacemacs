@@ -36,14 +36,15 @@
                   (quote
                    ("/usr/include/"
                     "/usr/local/include/"
-                    "/usr/include/c++/6.2.1/"
-                    "/usr/include/c++/6.2.1/x86_64-redhat-linux/"
-                    "/usr/include/c++/6.2.1/backward/"
-                    "/usr/lib/gcc/x86_64-redhat-linux/6.2.1/include"))))))
+                    "/usr/include/c++/8.2.1/"
+                    "/usr/include/c++/8.2.1/x86_64-redhat-linux/"
+                    "/usr/include/c++/8.2.1/backward/"
+                    "/usr/lib/gcc/x86_64-redhat-linux/8.2.1/include"))))))
 
 (defun yulong/post-init-ess ()
   (use-package ess
     :defer t
+    :bind (("_" . #'ess-insert-assign))
     :init (progn
             (setq ess-roxy-template-alist
                   (quote
