@@ -36,10 +36,10 @@
                   (quote
                    ("/usr/include/"
                     "/usr/local/include/"
-                    "/usr/include/c++/8.2.1/"
-                    "/usr/include/c++/8.2.1/x86_64-redhat-linux/"
-                    "/usr/include/c++/8.2.1/backward/"
-                    "/usr/lib/gcc/x86_64-redhat-linux/8.2.1/include"))))))
+                    "/usr/include/c++/9/"
+                    "/usr/include/c++/9/x86_64-redhat-linux/"
+                    "/usr/include/c++/9/backward/"
+                    "/usr/lib/gcc/x86_64-redhat-linux/9/include"))))))
 
 (defun yulong/post-init-ess ()
   (use-package ess
@@ -64,9 +64,7 @@
       "http://roughtheory.com/posts/ess-rmarkdown.html"
       ;; Check if attached R-session
       (condition-case nil
-          (ess-get-process)
-        (error
-         (ess-switch-process)))
+          (ess-get-process))
       (let* ((rmd-buf (current-buffer)))
         (save-excursion
           (let* ((sprocess (ess-get-process ess-current-process-name))
