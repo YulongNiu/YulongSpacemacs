@@ -2,6 +2,6 @@
 # name: Highlight Language Inline
 # key: hli
 # binding: direct-keybinding
-# contributor: Yulong Niu <yulong.niu@aol.com>
+# contributor: Yulong Niu <yulong.niu@hotmail.com>
 # --
 \`$0\`{:.language-${1:bash}}

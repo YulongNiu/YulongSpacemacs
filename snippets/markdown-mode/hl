@@ -2,7 +2,7 @@
 # name: Highlight Language
 # key: hl
 # binding: direct-keybinding
-# contributor: Yulong Niu <yulong.niu@aol.com>
+# contributor: Yulong Niu <yulong.niu@hotmail.com>
 # --
 
 {% codeblock lang:${1:bash} ${2:description} %}

@@ -1,10 +1,8 @@
 # -*- mode: snippet; require-final-newline: nil -*-
-# name: code block with '```'
-# key: ``
+# name: nice sentence hightlight
+# key: swS
 # binding: direct-keybinding
 # contributor: Yulong Niu <yulong.niu@hotmail.com>
 # --
+\`r swS('$0')\`
 
-\`\`\` ${1:bash}
-$0
-\`\`\`
