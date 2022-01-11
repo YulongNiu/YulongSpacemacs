@@ -28,18 +28,7 @@
 ;;   `yulong/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
-(defun yulong/post-init-company-c-headers ()
-  (use-package company-c-headers
-    :defer t
-    :init (progn
-            (setq company-c-headers-path-system
-                  (quote
-                   ("/usr/include/"
-                    "/usr/local/include/"
-                    "/usr/include/c++/9/"
-                    "/usr/include/c++/9/x86_64-redhat-linux/"
-                    "/usr/include/c++/9/backward/"
-                    "/usr/lib/gcc/x86_64-redhat-linux/9/include"))))))
+(defun yulong/post-init-company-c-headers ())
 
 (defun yulong/post-init-ess ()
   (use-package ess
@@ -82,7 +71,6 @@
 (defconst yulong-packages
   '(
       ;; package names go here
-      company-c-headers
       ess
       )
   "The list of Lisp packages required by the yulong layer.
